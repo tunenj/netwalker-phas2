@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Gym</h2>
+        <h2>Massage</h2>
+      </div>
+      <div class="filter-form">
+        <div class="filter-item">
+          <label class="start-date" for="startDate">Start Date</label>
+          <input type="date" id="startDate" />
+        </div>
+        <div class="filter-item">
+          <label class="end-date" for="endDate">End Date</label>
+          <input type="date" id="endDate" />
+        </div>
+        <div class="filter-item">
+          <label class="membershipPlan" for="membershipPlan"
+            >Membership Plan</label
+          >
+          <select id="membershipPlan">
+            <option>All Plans</option>
+          </select>
+        </div>
+      </div>
+      <div class="filter-container">
+        <div class="filter">
+          <label for="">Filter</label>
+          <input type="text" placeholder="search by name or phone" />
+        </div>
+        <!-- Enroll to Gym Button -->
+        <button id="enroll-btn" class="enroll-button">Enroll to Gym</button>
+
+        <!-- Membership Form -->
+        <div id="membership-form" class="hidden">
+          <h1>Membership History</h1>
+
+          <!-- Personal Details -->
+          <div class="section">
+            <div class="form-row form-row-1">
+              <div>
+                <label class="name" for="full-name">Full Name</label>
+                <input
+                  class="full-name-input"
+                  type="text"
+                  id="full-name"
+                  placeholder="enter client full name"
+                />
+              </div>
+              <div>
+                <label class="gender" for="gender">Gender</label>
+                <input
+                  class="gender-input"
+                  type="text"
+                  id="gender"
+                  placeholder="select gender"
+                />
+              </div>
+            </div>
+            <div class="form-row form-row-2">
+              <div>
+                <label class="dob" for="dob">Date of Birth</label>
+                <input class="dob-input" type="text" id="dob" placeholder="date of birth" />
+              </div>
+              <div>
+                <label class="phone-number" for="phone-number">Phone Number</label>
+                <input class="phone-input"
+                  type="text"
+                  id="phone-number"
+                  placeholder="enter phone number(s)"
+                />
+              </div>
+            </div>
+            <div class="form-row form-row-3">
+              <div>
+                <label class="address" for="address">Address</label>
+                <input class="address-input"
+                  type="text"
+                  id="address"
+                  placeholder="enter full address"
+                />
+              </div>
+              <div>
+                <label class="how-found-us" for="how-found-us">How You Found Us</label>
+                <input class="how-found-us-input"
+                  type="text"
+                  id="how-found-us"
+                  placeholder="enter how you found us"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Emergency Contact Details -->
+          <div class="section">
+            <h2>Emergency Contact Details</h2>
+            <div class="form-row form-row-4">
+              <div>
+                <label class="contact-name" for="contact-name">Contact Name</label>
+                <input class="contact-name-input"
+                  type="text"
+                  id="contact-name"
+                  placeholder="enter contact name"
+                />
+              </div>
+              <div>
+                <label class="contact-phone" for="contact-phone">Phone Number</label>
+                <input class="contact-phone-input"
+                  type="text"
+                  id="contact-phone"
+                  placeholder="Search by name or phone"
+                />
+              </div>
+            </div>
+            <div class="form-row form-row-5">
+              <div>
+                <label class="relationship" for="relationship">Relationship</label>
+                <input class="relationship-input"
+                  type="text"
+                  id="relationship"
+                  placeholder="enter contact name"
+                />
+              </div>
+              <div>
+                <label class="emergency-phone" for="emergency-phone">Phone Number</label>
+                <input class="emergency-phone-input"
+                  type="text"
+                  id="emergency-phone"
+                  placeholder="Search by name or phone"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Membership Details -->
+          <div class="section-membership">
+            <h3>Membership Details</h3>
+            <div class="form-container">
+              <div class="form-group form-plan">
+                <label class="Choose-Plan" for="plan">Choose Plan <small>(30 days)</small></label>
+                <select id="plan">
+                </select>
+              </div>
+              <div class="form-group form-discount">
+                <label class="discount" for="discount">Discount</label>
+                <div class="input-discount">
+                  <input type="number" placeholder="Flat">
+                  <input type="text" placeholder="5,000">
+                </div>
+              </div>
+              <div class="form-group form-payable">
+                <label class="amount-payable" for="amount-payable">Amount Payable</label>
+                <input id="amount-payable" type="text" placeholder="5,000">
+              </div>
+              <div class="form-group form-surcharge">
+                <label class="surcharge" for="surcharge">Surcharge</label>
+                <div class="input-surchage">
+                  <input type="text" placeholder="%">
+                  <input type="text" placeholder="5,000">
+                </div>
+              </div>
+            </div>            
+          </div>
+
+          <!-- Payment Details -->
+          <div class="section">
+            <h2>Payment Details</h2>
+            <div class="form-row">
+              <div>
+                <label class="paying-amount" for="paying-amount">Paying Amount</label>
+                <input type="text" id="paying-amount" placeholder="5,000" />
+              </div>
+              <div>
+                <label class="Plane" for="Plane">Choose Plane</label>
+                <input class="plane-input" type="text" placeholder="Zenith bank">
+              </div>
+            </div>
+          </div>
+
+          <button class="save-btn">Save</button>
+        </div>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>S/N</th>
+              <th>Client Name/Phone</th>
+              <th>Date and Time registered</th>
+              <th>Current Plan & Validity</th>
+              <th>Date Registered & By</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="first-row">
+              <td>1</td>
+              <td>
+                Isaac Odinaka Franklin (M, 32)<br /><span class="tag"
+                  >07013178793</span
+                >
+              </td>
+              <td>
+                2024-10-14 9:45 PM<br /><span class="tag">Isaac Odinaka</span>
+              </td>
+              <td>
+                <div>
+                  Deluxe
+                  <!-- View Membership History Button -->
+                  <button id="view-history-btn" class="action-button">
+                    View Membership History
+                  </button>
+
+                  <!-- Membership History Table (Initially Hidden) -->
+                  <div id="membership-history" class="hidden">
+                    <div class="table-header">
+                      <h2>Membership History</h2>
+                      <button id="close-history-btn" class="close-button">
+                        X
+                      </button>
+                    </div>
+                    <table class="styled-table-sub">
+                      <thead>
+                        <tr>
+                          <th>S/N</th>
+                          <th>Date/Time</th>
+                          <th>Validity</th>
+                          <th>Trans. Code</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            2024-01-25 9:45 PM<br /><span class="tag-sub"
+                              >Isaac Odinaka</span
+                            >
+                          </td>
+                          <td>
+                            6 Months<br /><span class="tag-sub"
+                              >2024-10-10</span
+                            >
+                          </td>
+                          <td>NX152369</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            2024-02-20 8:30 PM<br /><span class="tag-sub"
+                              >John Doe</span
+                            >
+                          </td>
+                          <td>6 Months</td>
+                          <td>NX152370</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            2024-02-20 8:30 PM<br /><span class="tag-sub"
+                              >John Doe</span
+                            >
+                          </td>
+                          <td>
+                            6 Months<br /><span class="tag-sub"
+                              >2024-11-15</span
+                            >
+                          </td>
+                          <td>NX152370</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <br />
+                  <span class="tag">2024-12-19 - 2024-12-19</span>
+                </div>
+              </td>
+              <td>
+                2024-10-14 9:45 PM<br /><span class="tag">Isaac Odinaka</span>
+              </td>
+              <td>
+                <div class="button-group">
+                  <button class="more-btn">More</button>
+                  <button class="note-btn">Physio Note</button>
+                </div>
+              </td>
+            </tr>
+            <tr class="second-row">
+              <td>2</td>
+              <td>
+                2024-10-14 9:45 PM<br /><span class="tag"
+                  >IsaacOdinaka Franklin</span
+                >
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="third-row">
+              <td>3</td>
+              <td>
+                2023-12-11 9:45AM<br /><span class="tag"
+                  >IsaacOdinaka Franklin</span
+                >
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
